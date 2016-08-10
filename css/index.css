@@ -1,0 +1,273 @@
+@font-face {
+     font-family: josefin;
+     src: url('../fonts/josefin_sans/JosefinSans-Bold.ttf') format('truetype');
+     src: url('../fonts/josefin_sans/JosefinSans-Regular.ttf') format('truetype');
+     src: url('../fonts/josefin_sans/JosefinSans-SemiBold.ttf') format('truetype');
+}
+
+/* estilo inicial */
+body {
+    background-color: #2b3a42;
+    padding: 0 7px;
+    color: #fff;
+}
+
+a{
+    color: #fff;
+}
+
+/* estilo do titulo */
+.titulo {
+    font-family: josefin;
+    font-size: 20px;
+}
+
+.lupa{
+    right: 7px;
+    top: 20px;
+    position: absolute !important;
+}
+
+.destaqueNome{
+    font-weight: bold;
+    color: #ff9100
+}
+
+nav li a .material-icons{
+    position: absolute;
+    margin-top: 6px;
+    left: 30px;
+}
+
+.logo{
+    width: 100%;
+    height: 120px;
+    background-color:#000;
+    float: left;
+}
+
+.fechar_pesquisa{
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    z-index: 3;
+    color: #000;
+    top: 9px
+}
+
+.listagemNoticia{
+    width: 100%;
+    position: relative;
+    float: left;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.listagemNoticia img{
+    float: left;
+    width: 90px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.listagemVideos{
+    width: 100%;
+    float: left;
+    height: 170px;
+    margin-bottom: 1px;
+}
+
+.listagemVideos img{
+    width: 100%;
+    height: 170px;
+}
+
+.listagemVideos .descr-video{
+    font-size: 12px;
+    color: #fff;
+    float: left;
+    margin-top: -50px;
+    padding: 3px 7px;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    position: relative;
+}
+
+.listagemVideos .dates{
+    font-size: 10px;
+    color: #eee;
+    float: left;
+    margin-top: -30px;
+    padding: 3px 7px;
+    z-index: 1;
+    position: relative;
+}
+
+.listagemNoticia .categ{
+    font-size: 12px;
+    font-weight: bold;
+    color: #ef6c00;
+    float: left;
+}
+
+.bt_fechar_area_browser{
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    z-index: 2;
+    color: #fff;
+    font-weight: bold;
+    padding: 4px 5px;
+    display: block;
+    background: #000
+}
+
+.area_browser{
+    top: 60px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1
+}
+
+.area_browser iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.listagemNoticia .descr{
+    font-size: 12px;
+    color: #fff;
+    text-align: justify;
+}
+
+.listagemNoticia .times{
+    font-size: 10px;
+    color: #eee;
+    float: right
+}
+
+.listagemNoticia table tr td{
+    padding: 0 !important
+}
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: 170px;
+}
+
+#owl-demo .titt{
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 7px;
+    background: rgba(0,0,0,0.5);
+    margin-top: -60px;
+    float: left;
+    position: relative;
+    z-index: -999
+}
+
+
+
+.owl-pagination{
+    margin-top: -40px;
+    z-index: 1;
+    position: relative;
+}
+
+.area-search{
+    left: 7px;
+    right: 7px;
+    top: 7px;
+    background-color: #fff;
+    height: 45px;
+    position: fixed;
+    display: none;
+    z-index: 3;
+}
+
+.area-search input, .area-search input:hover, .area-search input:focus{
+    background: #fff;
+    color: #000;
+    padding: 0 1%;
+    width: 98%;
+    position: absolute;
+    border-bottom: 0px solid #000 !important
+}
+
+.titulo .menu{
+    position: absolute;
+    left: 7px;
+    margin-top:3px;
+}
+
+.side-nav{
+    background-color: #263238;
+    color: #fff
+}
+
+.side-nav a{
+    color: #fff;
+    padding-left: 70px !important
+}
+
+.slide-image{
+    left: 0;
+    right: 0;
+    height: 170px;
+}
+
+#news button{
+    font-size: 12px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-right: 5px;
+    background: #ef6c00
+}
+
+/* cor da aba */
+.tabs {
+    background:#263238;
+    position: fixed;
+    top: 61px;
+    left: 0;
+    right: 0;
+    z-index: 2
+}
+
+.tabs a{
+    font-size: 13px !important
+}
+
+.tabs .tab a, .tabs .tab a:hover{
+    color: #fff;
+    font-family: josefin;
+}
+
+
+.tabs .indicator{
+    background-color: #ff9100
+}
+
+nav li a{
+    line-height:40px !important;
+    height: auto !important
+}
+
+/* fixo no topo */
+.topo-fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background:#263238;
+    z-index: 2;
+    padding: 20px 7px 20px 45px;
+    color: #fff;
+}
+.section {
+    padding-top: 60px;
+}

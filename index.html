@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Caruaru Rock Festival</title>
+        <link href="./owl-carousel/owl.carousel.css" rel="stylesheet">
+        <link href="./owl-carousel/owl.theme.css" rel="stylesheet">
+        <link href="./assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+        <!-- Le fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+    </head>
+    <body>
+        <!-- nav de abertura da esquerda com mais menus -->
+        <nav>
+            <ul id="slide-out" class="side-nav">
+                <li class="logo"><img src="./img/logo.png" width="100%"></li>
+<!--                 <li><a href="#news" data-titulo="RockNews"><span class="material-icons">language</span> Rock<span class="destaqueNome">News</span></a></li> -->
+                <li><a href="#home" data-titulo="home"><span class="material-icons">dialpad</span> Home</a></li>
+                <li><a href="#ingressos" data-titulo="Ingressos"><span class="material-icons">loyalty</span> Ingressos</a></li>
+<!--                 <li><a href="#enquetes" data-titulo="Enquetes"><span class="material-icons">receipt</span> Enquetes</a></li>
+                <li><a href="#sorteios" data-titulo="Sorteios"><span class="material-icons">equalizer</span> Sorteios</a></li>
+                <li><a href="#videos" data-titulo="Vídeos"><span class="material-icons">play_arrow</span> Vídeos</a></li> -->
+            </ul>
+        </nav>
+
+        <div class="topo-fixo titulo">
+            <!-- <i class="material-icons lupa">search</i> -->
+            <a data-activates="slide-out" class="button-collapse"><i class="material-icons menu">menu</i></a>&nbsp;<span class="titles">Rock<span class="destaqueNome">News</span></span>
+        </div>
+        <div class="row">
+            <div class="col s12">
+              <ul class="tabs z-depth-2">
+                <li class="tab col s2 waves-effect"><a class="active" href="#news" data-titulo="RockNews">NEWS</a></li>
+                <li class="tab col s2 waves-effect"><a href="#sorteios" data-titulo="Sorteios">SORTEIOS</a></li>
+                <li class="tab col s2 waves-effect"><a href="#videos" data-titulo="Vídeos">VÍDEOS</a></li>
+                <li class="tab col s2 waves-effect"><a href="#enquetes" data-titulo="Enquetes">ENQUETES</a></li>
+              </ul>
+            </div>
+            <div id="tudo">
+                <div id="news" class="section">
+                    <div class="slide-image">
+                        <div id="owl-demo" class="owl-carousel owl-theme">
+                        </div>
+                    </div>
+                    <p>
+                        <button class="btn waves-effect filtroNoticias" data-value="Todos">Todos</button>
+                        <button class="btn waves-effect filtroNoticias" data-value="Eventos">Evento 2016</button>
+                        <button class="btn waves-effect filtroNoticias" data-value="Anteriores">Anteriores</button>
+                    </p>
+                    <div class="noticias">
+                        
+                    </div>
+                </div>
+                <div id="sorteios" class="section">
+                    <br>
+                    <p></p>
+                   <input type="text" id="nomePromocoes" placeholder="Seu nome">
+                   <input type="text" id="celularPromocoes" placeholder="Seu Celular">
+                   <button class="btn" onclick="capturePhoto();">Capturar foto e enviar</button>
+                </div>
+                <div id="videos" class="section">
+                    
+                </div>
+                <div id="enquetes" class="section">
+                    <p></p>
+                    <form>
+                        <input type="text" placeholder="Digite aqui" name="resposta" id="resposta" />
+                        <input type="text" placeholder="Seu nome" name="nome" id="nome" />
+                        <button class="btn" type="button" id="enviar_resposta_enquete">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script src="./owl-carousel/owl.carousel.js"></script>
+        <script src="./assets/js/google-code-prettify/prettify.js"></script>
+
+       <script type="text/javascript" charset="utf-8">
+
+
+        
+            
+
+ 
+    var pictureSource;   // picture source
+var destinationType; // sets the format of returned value
+ 
+document.addEventListener("deviceready", onDeviceReady, false);
+ 
+function onDeviceReady() {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+}
+ 
+function clearCache() {
+    navigator.camera.cleanup();
+}
+ 
+var retries = 0;
+function onCapturePhoto(fileURI) {
+
+    $('body').append('<div id="pontoDeCarregamento" style="position:fixed; top:0; left:0; z-index:2999; right:0; bottom:0; background: rgba(255,255,255,0.5);"><div style="width:50px; position:fixed; left:50%; margin-left:-25px; top:50%; margin-top:-25px; z-index: 3000;"><div class="preloader-wrapper big active"><div class="spinner-layer spinner-blue-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div></div></div>');
+
+    var win = function (r) {
+        clearCache();
+        retries = 0;
+        $('#nomePromocoes').val('').hide();
+        $('#celularPromocoes').val('').hide();
+        $('#sorteios button').hide();
+        $('#pontoDeCarregamento').remove();
+        $('#sorteios p').html('Você já está concorrendo, boa sorte!! :D');
+
+    }
+
+    var nomer = $('#nomePromocoes').val();
+    var celular = $('#celularPromocoes').val();
+    var idP = $('#idPromocao').val();
+    var tokenss = tokenrt;
+ 
+    var fail = function (error) {
+        if (retries == 0) {
+            retries ++
+            setTimeout(function() {
+                onCapturePhoto(fileURI)
+            }, 1000)
+        } else {
+            retries = 0;
+            clearCache();
+            alert('Erro!');
+        }
+    }
+ 
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
+    options.mimeType = "image/jpeg";
+    options.params = {};
+    var ft = new FileTransfer();
+    ft.upload(fileURI, encodeURI("http://192.185.215.205/~caruarurockfesti/configs/webservice.php?acao=imgProm&nome="+nomer+"&token="+tokenss+"&idP="+idP+"&celular="+celular), win, fail, options);
+}
+ 
+function capturePhoto() {
+
+    var nomere = $('#nomePromocoes').val();
+    var celulare = $('#celularPromocoes').val();
+
+    if(nomere == '' || celulare == ''){
+
+    }else{
+       navigator.camera.getPicture(onCapturePhoto, onFail, {
+            quality: 100,
+            destinationType: destinationType.FILE_URI
+        }); 
+    }
+    
+}
+ 
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+       
+</script>
+    </body>
+</html>
